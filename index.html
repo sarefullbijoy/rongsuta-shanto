@@ -24,14 +24,17 @@
 </head>
 <body class="min-h-screen flex flex-col selection:bg-amber-200 selection:text-amber-900">
 
-    <!-- Top Navigation / Header -->
+    <!-- ==========================================
+         [EDIT HERE: TOP NAVIGATION & LOGO]
+         গোল রিংগের মধ্যে লোগো ছবি (15498.jpg) এখানে সেট করা হয়েছে।
+         ========================================== -->
     <header class="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-amber-900/10 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo & Brand -->
             <a href="#" onclick="showHome()" class="flex items-center gap-3 group">
                 <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-amber-800/80 shadow-sm flex items-center justify-center bg-white shrink-0 group-hover:scale-105 transition-transform">
-                    <!-- Circular Logo from 15498.jpg -->
-                    <img src="15498.jpg" alt="Rongsuta Logo" class="w-full h-full object-cover">
+                    <!-- লোগো ছবি: 15498.jpg -->
+                    <img src="FB_IMG_1792402488101.jpg" alt="Rongsuta Logo" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <span class="text-xl sm:text-2xl font-bold tracking-tight text-amber-950 font-serif">রঙসুতা | Rongsuta</span>
@@ -65,7 +68,7 @@
 
         <!-- ==================== HOMEPAGE SECTION ==================== -->
         <div id="homeSection" class="block">
-            <!-- Hero Section with Banner (15499.jpg & 15498.jpg) -->
+            <!-- Hero Section with Main Banner (15499.jpg) -->
             <section class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <!-- Hero Left Text -->
@@ -96,9 +99,10 @@
                         </div>
                     </div>
 
-                    <!-- Hero Right Image Showcase (15499.jpg banner) -->
+                    <!-- Hero Right Image Showcase (15499.jpg) -->
                     <div class="lg:col-span-5 flex justify-center">
                         <div class="relative w-full max-w-md rounded-2xl overflow-hidden shadow-xl border-2 border-amber-900/20 bg-white group">
+                            <!-- মূল ওয়েবসাইটের প্রধান ছবি: 15499.jpg -->
                             <img src="15499.jpg" alt="Rongsuta Collection" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-amber-950/80 to-transparent p-4 text-white text-center">
                                 <p class="text-xs sm:text-sm font-semibold tracking-wide" data-i18n="banner_caption">খাদি, বাটিক কটন ও প্রিমিয়াম কালেকশন</p>
@@ -108,7 +112,7 @@
                 </div>
             </section>
 
-            <!-- Features Highlights (From 15499.jpg) -->
+            <!-- Features Highlights -->
             <section class="py-10 bg-amber-900/5 border-y border-amber-900/10">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -272,7 +276,7 @@
 
                         <div>
                             <label class="block text-sm font-semibold text-amber-950 mb-1.5" data-i18n="label_phone">ফোন নম্বর (WhatsApp) *</label>
-                            <input type="tel" id="custPhone" placeholder="যেমন: 01700000000" class="w-full px-4 py-3 rounded-xl border border-amber-900/20 focus:outline-none focus:ring-2 focus:ring-amber-800 bg-[#FAF8F5]/50 text-amber-950" required>
+                            <input type="tel" id="custPhone" placeholder="যেমন: 01913634682" class="w-full px-4 py-3 rounded-xl border border-amber-900/20 focus:outline-none focus:ring-2 focus:ring-amber-800 bg-[#FAF8F5]/50 text-amber-950" required>
                             <p id="errPhone" class="text-xs text-red-600 mt-1 hidden" data-i18n="err_phone">সঠিক ফোন নম্বর প্রদান করুন।</p>
                         </div>
 
@@ -481,7 +485,8 @@
                 </div>
             </div>
             <div class="text-xs text-amber-200/60">
-                <p>© 2026 রঙসুতা (Rongsuta). All rights reserved.</p>
+                <!-- ==================== [EDIT HERE: COPYRIGHT & OWNER] ==================== -->
+                <p>© 2026 Sarefull Islam Bijoy (রঙসুতা). All rights reserved.</p>
                 <p class="mt-1 font-medium">WhatsApp: 01913634682</p>
             </div>
         </div>
@@ -490,30 +495,30 @@
     <!-- JavaScript Application Logic -->
     <script>
         // ==========================================
-        // CONFIGURATION & STATE
+        // [EDIT HERE: CONFIGURATION & WHATSAPP NUMBER]
+        // আপনার WhatsApp নম্বর: 01913634682 (ইন্টারন্যাশনাল ফরম্যাটে 8801913634682)
         // ==========================================
-        // Updated WhatsApp number as requested: 01913634682 (international format: 8801913634682)
         const BUSINESS_WHATSAPP_NUMBER = "8801913634682";
 
-        let currentLang = 'bn'; // 'bn' or 'en'
+        let currentLang = 'bn'; // 'bn' বা 'en'
         let currentStep = 1;
         const totalSteps = 5;
 
-        // Form state data object
+        // ফর্মের ডাটা অবজেক্ট
         let formData = {
             name: '',
             phone: '',
             address: '',
-            gender: '', // 'male' or 'female'
-            clothingType: '', // e.g., 'panjabi', 'kameez', etc. or custom string
+            gender: '', // 'male' বা 'female'
+            clothingType: '', 
             otherClothing: '',
-            sizeType: '', // 'ready' or 'custom'
-            readySize: '', // e.g. '38', '40'
-            unit: 'inch', // 'inch' or 'cm'
-            measurements: {} // key-value pairs
+            sizeType: '', // 'ready' বা 'custom'
+            readySize: '', 
+            unit: 'inch', // 'inch' বা 'cm'
+            measurements: {} 
         };
 
-        // Translations Dictionary
+        // ভাষা এবং টেক্সট ডিকশনারি
         const translations = {
             bn: {
                 tagline_short: "রঙে ঐতিহ্য, সুতায় আস্থা",
@@ -701,7 +706,10 @@
             }
         };
 
-        // Clothing type definitions in both languages
+        // ==========================================
+        // [EDIT HERE: CLOTHING TYPES]
+        // পুরুষ এবং নারীদের পোশাকের আইটেম তালিকা
+        // ==========================================
         const clothingTypesData = {
             male: [
                 { id: 'panjabi', bn: 'পাঞ্জাবি (Panjabi)', en: 'Panjabi' },
@@ -717,7 +725,10 @@
             ]
         };
 
-        // Measurement fields configuration per garment type
+        // ==========================================
+        // [EDIT HERE: MEASUREMENT FIELDS CONFIG]
+        // নির্দিষ্ট পোশাকের মাপের ক্ষেত্রসমূহ
+        // ==========================================
         const measurementFieldsConfig = {
             panjabi: [
                 { id: 'chest', bn: 'বুকের মাপ (Chest)', en: 'Chest' },
@@ -1286,4 +1297,4 @@
         }
     </script>
 </body>
-</html>
+                            </html>
